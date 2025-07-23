@@ -1,3 +1,4 @@
+/* Reset e base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,39 +9,47 @@
 body {
   background-color: #f9f9f9;
   color: #333;
-  padding: 30px;
+  padding: 20px;
 }
 
+/* Container central */
 .container {
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
   background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Título principal */
 h1 {
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 24px;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
 }
 
+/* Navegação */
 .nav {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .nav-btn {
-  flex: 1;
-  padding: 10px;
+  flex: 1 1 30%;
+  min-width: 150px;
+  padding: 12px 10px;
   background-color: #eee;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-btn:hover {
@@ -53,6 +62,7 @@ h1 {
   border-color: #007BFF;
 }
 
+/* Seções dos formulários */
 .form-section {
   display: none;
 }
@@ -62,34 +72,49 @@ h1 {
   animation: fadeIn 0.3s ease;
 }
 
+/* Título da seção */
 h2 {
-  margin-bottom: 15px;
   font-size: 20px;
+  margin-bottom: 20px;
 }
 
+/* Estilo dos formulários */
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
 }
 
-input, select, textarea, button {
-  padding: 10px;
-  font-size: 16px;
+input, select, textarea {
+  padding: 12px;
+  font-size: 15px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
+  background-color: #fafafa;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #007BFF;
+  background-color: #fff;
 }
 
 textarea {
   resize: vertical;
+  min-height: 100px;
 }
 
+/* Botão de envio */
 button {
+  padding: 12px;
   background-color: #28a745;
   color: white;
   font-weight: bold;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 16px;
   transition: background-color 0.3s;
 }
 
@@ -97,11 +122,51 @@ button:hover {
   background-color: #218838;
 }
 
+/* Escondido */
 .hidden {
   display: none;
 }
 
+/* Animação */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav-btn {
+    flex: 1 1 100%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px 10px;
+  }
+
+  input, select, textarea, button {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px;
+  }
 }
