@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Avaliação</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Sistema de Avaliação</h1>
+    <nav class="nav">
+      <button onclick="showForm('sugestoes')">Sugestões</button>
+      <button onclick="showForm('setor')">Avaliação de Setor</button>
+      <button onclick="showForm('evento')">Avaliação do Evento</button>
+    </nav>
+
+    <section id="sugestoes" class="form-section">
+      <h2>Formulário de Sugestões</h2>
+      <form action="https://formsubmit.co/derickcampossantos1@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nova Sugestão enviada">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="sugestao" placeholder="Digite sua sugestão..." rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section id="setor" class="form-section hidden">
+      <h2>Avaliação de Setor</h2>
+      <form action="https://formsubmit.co/derickcampossantos1@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Avaliação de Setor enviada">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <select name="setor" required>
+          <option value="">Selecione o setor</option>
+          <option>Divulgação e redes sociais</option>
+          <option>Marketing</option>
+          <option>Recepção e cerimonia</option>
+          <option>Gestão</option>
+          <option>Programação</option>
+          <option>Infraestrutura e logística</option>
+        </select>
+        <textarea name="avaliacao" placeholder="Sua avaliação..." rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section id="evento" class="form-section hidden">
+      <h2>Avaliação do Evento</h2>
+      <form action="https://formsubmit.co/derickcampossantos1@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Avaliação do Evento enviada">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <label>De 1 a 5, como você avalia o evento?</label>
+        <input type="number" name="nota" min="1" max="5" required>
+        <textarea name="comentarios" placeholder="Comentários adicionais..." rows="5"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
